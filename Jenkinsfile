@@ -1,9 +1,15 @@
 pipeline {
-    agent any 
+    agent none 
     stages {
-        stage('Stage 1') {
+	stage('test') {
+	}
+        stage('doc') {
+	    agent {
+		image : ruby:latest
+	    }
             steps {
-                echo 'Hello world!' 
+                echo 'Hello world!'
+		sh 'rdoc' 
             }
         }
     }
