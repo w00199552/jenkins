@@ -5,7 +5,7 @@ pipeline {
 	}
         stage('doc') {
 	    agent {
-		image : ruby:latest
+		docker { image  'ruby:latest' }
 	    }
             steps {
                 echo 'Hello world!'
