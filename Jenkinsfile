@@ -2,7 +2,9 @@ pipeline {
     agent none 
     stages {
 	stage('test') {
-	    steps {}
+	    steps {
+		echo 'ruby test'
+	    }
 	}
         stage('doc') {
 	    agent {
@@ -15,6 +17,7 @@ pipeline {
         }
 	stage('gems build') {
 	    steps {
+		echo 'gems build'
 	    }
 	}
     }
