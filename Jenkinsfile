@@ -2,6 +2,7 @@ pipeline {
     agent none 
     stages {
 	stage('test') {
+	    steps {}
 	}
         stage('doc') {
 	    agent {
@@ -12,5 +13,9 @@ pipeline {
 		sh 'rdoc' 
             }
         }
+	stage('gems build') {
+	    steps {
+	    }
+	}
     }
 }
